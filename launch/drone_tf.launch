@@ -1,0 +1,6 @@
+<launch>
+<!-- TRANSFORMS -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="baselink2imu" args="0 0 0 0 0 0 body_link world"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="baselink2velo" args="0 0 0 0 0 0 body_link /gps"/>
+
+</launch>

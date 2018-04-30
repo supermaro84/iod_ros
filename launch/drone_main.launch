@@ -1,10 +1,12 @@
 <launch>
 <node name="rosflight" type="rosflight_io" pkg="rosflight"/>
-<node name="roscopter" type="gps" pkg="rosflight_utils">
+<node name="gps_node" type="gps" pkg="rosflight_utils">
 	<param name="port" value="/dev/ttyUSB1"/>
 	<param name="baud" value="4800"/>
 </node>
 <node name="mekf" type="mekf" pkg="roscopter">
     <remap from="/gps/data" to="/gps"/> 
 </node>
+<!-- TF -->
+<include file="$(find iod_ros)/launch/drone_tf.launch"/>
 </launch>
