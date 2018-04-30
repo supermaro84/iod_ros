@@ -1,5 +1,7 @@
 <launch>
-<node name="rosflight" type="rosflight_io" pkg="rosflight"/>
+<node name="rosflight" type="rosflight_io" pkg="rosflight">
+	<param name="frame_id" value="body_link"/>
+</node>
 <node name="gps_node" type="gps" pkg="rosflight_utils">
 	<param name="port" value="/dev/ttyUSB1"/>
 	<param name="baud" value="4800"/>
@@ -8,5 +10,5 @@
     <remap from="/gps/data" to="/gps"/> 
 </node>
 <!-- TF -->
-<include file="$(find iod_ros)/launch/drone_tf.launch"/>
+<!--<include file="$(find iod_ros)/launch/drone_tf.launch"/>-->
 </launch>
