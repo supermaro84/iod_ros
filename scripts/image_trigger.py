@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 from std_msgs.msg import String
-from rosflight_msgs import GPS
+from rosflight_msgs.msg import GPS
 
 
 def callback(data):
