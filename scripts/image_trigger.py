@@ -5,12 +5,12 @@ from rosflight_msgs.msg import GPS
 from picamera import PiCamera
 
 camera = PiCamera()
-camera.resolution = (1024, 768)
+camera.resolution = (3280, 2464)
 
 
 def callback(data):
     rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.latitude)
-    camera.capture('%s.jpg'%(data.latitude))
+    camera.capture('%s.jpg'%(data.header.seq))
 
 def listener():
 
